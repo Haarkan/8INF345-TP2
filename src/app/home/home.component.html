@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <title>Laboratoire 1 - The Products Website</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a id="home" class="navbar-brand" href="#">THE PRODUCTS WEBSITE</a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item" id="panierNav">
+      <a class="nav-link" href="#"><i class="material-icons">shopping_cart</i>Panier </a>
+    </li>
+    <li class="nav-item" id="connectionNav">
+      <a class="nav-link" href="#"><i class="material-icons">account_box</i>Connexion</a>
+    </li>
+    <li class="nav-item" id="disconectionNav" style="display: none;">
+      <a class="nav-link" href="#">Deconnexion</a>
+    </li>
+  </ul>
+</nav>
+
+
+<div id="MainContent" class="container">
+
+  <div id="modal"></div>
+  <div id="productList" class="row" style="width: 100%">
+
+    <div *ngFor="let product of curentProducts" id="product{{product.id}}" class="card col-sm-4 productBox" style="text-align:center;">
+      <div class="card-body">
+        <h4 class="card-title"> {{product.id }} </h4>
+        <img class="card-img-top" src="http://lorempixel.com/200/200" style="height:18%; width:auto;" alt="Card image">
+        <div> + {{product.price}} $CA<br/></div>
+        <button type="button" class="btPlus btPlus{{product.id}} btn btn-info"><i class="material-icons">zoom_in</i>
+        </button>
+        <button type="button" class="btAddToCart{{product.id}} btn btn-success"><i class="material-icons">add_shopping_cart</i>
+        </button>
+      </div>
+    </div>
+    <br/>
+  </div>
+  <div id="pageSelection">
+    <button *ngFor="let nbBt of paginationButtons()" (click)="setCurentPage(nbBt * 9)" type="button" id="btnPageProduct" class="btn">{{nbBt}}</button>
+  </div>
+
+</div>
+</body>
+
+<footer>
+
+
+</footer>
+
+</html>
