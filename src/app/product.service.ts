@@ -21,5 +21,13 @@ export class ProductService {
         return PRODUCTS.length;
     }
 
+    public getProductById (toFind: number): Product {
+        let product: Product;
+        PRODUCTS.forEach(function (prod) {
+            if (prod.id === toFind)
+                product = prod;
+        });
+        return product;
+    }
 
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, RouterModule} from '@angular/router';
 import {Product} from '../models/product';
 import {ProductService} from '../product.service';
 import {CartService} from '../cart.service';
@@ -14,13 +14,15 @@ export class HomeComponent implements OnInit {
     curentPage: number;
     curentProducts: Product[];
 
-    constructor(public route: ActivatedRoute, private productService: ProductService, private cartService: CartService) {
+    constructor(private productService: ProductService, private cartService: CartService) {
     }
 
     ngOnInit() {
         this.nbProducts = this.productService.countProducts();
         this.curentPage = 1;
         this.get10Products(9);
+
+
     }
 
     get10Products(indice: number): void {

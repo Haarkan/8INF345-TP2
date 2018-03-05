@@ -10,12 +10,14 @@ import {HomeComponent} from './home/home.component';
 import {ProductService} from './product.service';
 import {PanierComponent} from './panier/panier.component';
 import {CartService} from './cart.service';
+import {ProductDetailsComponent} from './home/product-details/product-details.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        PanierComponent
+        PanierComponent,
+        ProductDetailsComponent
     ],
     imports: [
         BrowserModule,
