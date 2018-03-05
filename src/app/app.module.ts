@@ -11,22 +11,30 @@ import {ProductService} from './product.service';
 import {PanierComponent} from './panier/panier.component';
 import {CartService} from './cart.service';
 import {ProductDetailsComponent} from './home/product-details/product-details.component';
+import {LoginComponent} from './login/login.component';
+import {AuthService} from './auth.service';
+import {AuthGuard} from './auth.guard';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
         PanierComponent,
-        ProductDetailsComponent
+        ProductDetailsComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
         NgbModule.forRoot(),
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule
     ],
     providers: [
         ProductService,
-        CartService
+        CartService,
+        AuthService,
+        AuthGuard
     ],
     bootstrap: [AppComponent]
 })

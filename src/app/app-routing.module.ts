@@ -3,6 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {PanierComponent} from './panier/panier.component';
 import {HomeComponent} from './home/home.component';
 import {ProductDetailsComponent} from './home/product-details/product-details.component';
+import {LoginComponent} from './login/login.component';
+import {AuthGuard} from './auth.guard';
 
 
 const appRoutes: Routes = [
@@ -17,12 +19,18 @@ const appRoutes: Routes = [
     {
         path: 'panier',
         component: PanierComponent,
-        data: { title: 'Panier' }
+        data: { title: 'Panier' },
+
     },
     {
         path: 'details/:id',
         component: ProductDetailsComponent,
         data: { title: 'Details' }
+    },
+    {
+        path: 'login',
+        component: LoginComponent,
+        data: { title: 'Login' }
     }
 ];
 
