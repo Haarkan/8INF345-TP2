@@ -21,4 +21,13 @@ export class CartService {
     public countProducts(): number {
         return this.cart.length;
     }
+
+    public payCart(): boolean {
+        if (Math.floor(Math.random() * Math.floor(2)) == 1) {
+            this.cart = new Array<Product>();
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

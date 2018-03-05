@@ -13,7 +13,8 @@ export class PanierComponent implements OnInit {
     nbProducts: number;
     curentPage: number;
     curentProducts: Product[];
-
+    isPaid: boolean;
+    errorPayement: boolean;
     constructor(public route: ActivatedRoute, private productService: ProductService, private cartService: CartService) {
     }
 
@@ -21,6 +22,8 @@ export class PanierComponent implements OnInit {
     ngOnInit() {
         this.nbProducts = this.cartService.countProducts();
         this.curentPage = 1;
+        this.isPaid = false;
+        this.errorPayement = false;
         this.get10Products(9);
     }
 
@@ -40,6 +43,17 @@ export class PanierComponent implements OnInit {
 
         }
         return buttons;
+    }
+
+    payCart(): void {
+        if (this.cartService.payCart()) {
+            this.isPaid = true;
+            this.errorPayement = false;
+            this.curentProducts = new Array<Product>();
+        }
+        else
+            this.errorPayement = true;
+
     }
 
     setCurentPage(page: number) {
