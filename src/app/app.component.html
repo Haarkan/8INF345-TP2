@@ -1,11 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
 <div>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a id="home" class="navbar-brand" href="#" (click)="reroute('home')">THE PRODUCTS WEBSITE</a>
-      
+        <a id="home" class="navbar-brand" href="#" routerLink="/home" routerLinkActive="active">THE PRODUCTS WEBSITE</a>
+
         <ul class="navbar-nav">
           <li class="nav-item" id="panierNav">
-            <a class="nav-link" href="#" (click)="reroute('panier')"><i class="material-icons">shopping_cart</i>Panier </a>
+            <a class="nav-link" href="#" routerLink="/panier" routerLinkActive="active"><i class="material-icons">shopping_cart</i>Panier </a>
           </li>
           <li class="nav-item" id="connectionNav">
             <a class="nav-link" href="#"><i class="material-icons">account_box</i>Connexion</a>
@@ -17,7 +18,6 @@
       </nav>
   <router-outlet></router-outlet>
 
-  <app-home></app-home>
 </div>
 
 

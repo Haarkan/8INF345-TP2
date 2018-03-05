@@ -5,18 +5,21 @@ import {PRODUCTS} from './mocks/product.mock';
 @Injectable()
 export class ProductService {
 
-  constructor() {
-  }
 
-  public getProducts(): Product[] {
-    return PRODUCTS;
-  }
+    constructor() {
+    }
 
-  public get10Products(indice: number): Product[] {
-    return PRODUCTS.slice(indice - 9, indice);
-  }
+    public getProducts(): Product[] {
+        return PRODUCTS;
+    }
 
-  public countProducts (): number {
-    return PRODUCTS.length;
-  }
+    public get10Products(indice: number): Product[] {
+        return PRODUCTS.slice(indice - 9, indice);
+    }
+
+    public countProducts(): number {
+        return PRODUCTS.length;
+    }
+
+
 }
