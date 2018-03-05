@@ -16,6 +16,7 @@ import {AuthService} from './auth.service';
 import {AuthGuard} from './auth.guard';
 import {FormsModule} from '@angular/forms';
 import {AdminComponent} from './admin/admin.component';
+import {AdminProductDetailsComponent} from './admin/admin-product-details/admin-product-details/admin-product-details.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import {AdminComponent} from './admin/admin.component';
         PanierComponent,
         ProductDetailsComponent,
         LoginComponent,
-        AdminComponent
+        AdminComponent,
+        AdminProductDetailsComponent
     ],
     imports: [
         BrowserModule,

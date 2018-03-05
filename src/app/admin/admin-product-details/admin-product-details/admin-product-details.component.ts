@@ -10,7 +10,6 @@ import {ProductService} from '../../../product.service';
   styleUrls: ['./admin-product-details.component.css']
 })
 export class AdminProductDetailsComponent implements OnInit {
-
     id: number;
 
     product: Product;

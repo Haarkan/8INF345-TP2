@@ -1,13 +1,13 @@
-<h4 class="modal-title"> {{product.name}} </h4>
+<div class="modal-header">
+    <h4 class="modal-title"><input id="createName" type="text" class="form-control"></h4>
+</div>
 <div class="modal-body">
-    <div><p> {{product.description}} </p></div>
-    <p><b> {{product.price}} $CA </b></p>
+    <input id="createDescription" type="text" class="form-control"><br/>
+    <input id="createPrice" type="number" class="form-control col-sm" pattern="[0-9]{*}"><span>$CA</span>
 </div>
 <div class="modal-footer">
-    <button (click)="addToCart()" type="button" class="btAddToCart  product.getId()  btn btn-success">Ajouter au
-        panier
+    <button type="button" class="btAdmin btCreateProduct btn btn-warning" data-dismiss="modal">Créer le
+        produit
     </button>
-    <button routerLink="/home" routerLinkActive="active" type="button" class="btn btn-danger" data-dismiss="modal">
-        Retour
-    </button>
+    <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
 </div>
