@@ -3,12 +3,6 @@ import { Product } from '../models/product';
 
 export const PRODUCTS: Product[] = [
   {
-    'id': 0,
-    'name': 'Produit 0',
-    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ',
-    'price' : 10
-  },
-  {
     'id': 1,
     'name': 'Produit 1',
     'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ',

@@ -4,11 +4,13 @@ import {AdminComponent} from './admin.component';
 import {CartService} from '../cart.service';
 import {ProductService} from '../product.service';
 import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        FormsModule
     ],
     declarations: [
         AdminComponent],

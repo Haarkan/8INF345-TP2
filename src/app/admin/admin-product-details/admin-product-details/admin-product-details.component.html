@@ -1,13 +1,12 @@
 <div class="modal-header">
-    <h4 class="modal-title"><input id="createName" type="text" class="form-control"></h4>
+    <h4 class="modal-title"><input [(ngModel)]="product.name" id="createName" type="text" class="form-control"></h4>
 </div>
 <div class="modal-body">
-    <input id="createDescription" type="text" class="form-control"><br/>
-    <input id="createPrice" type="number" class="form-control col-sm" pattern="[0-9]{*}"><span>$CA</span>
+    <input [(ngModel)]="product.description" id="createDescription" type="text" class="form-control"><br/>
+    <input [(ngModel)]="product.price" id="createPrice" type="number" class="form-control col-sm" pattern="[0-9]{*}"><span>$CA</span>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btAdmin btCreateProduct btn btn-warning" data-dismiss="modal">Créer le
-        produit
+    <button (click)="editProduct(product)" type="button" routerLink="/admin" routerLinkActive="active"  class="btAdmin btCreateProduct btn btn-warning" data-dismiss="modal">Valider
     </button>
-    <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+    <button routerLink="/admin" routerLinkActive="active"  type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
 </div>
