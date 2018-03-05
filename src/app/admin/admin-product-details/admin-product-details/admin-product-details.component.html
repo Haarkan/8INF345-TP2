@@ -1,0 +1,13 @@
+<h4 class="modal-title"> {{product.name}} </h4>
+<div class="modal-body">
+    <div><p> {{product.description}} </p></div>
+    <p><b> {{product.price}} $CA </b></p>
+</div>
+<div class="modal-footer">
+    <button (click)="addToCart()" type="button" class="btAddToCart  product.getId()  btn btn-success">Ajouter au
+        panier
+    </button>
+    <button routerLink="/home" routerLinkActive="active" type="button" class="btn btn-danger" data-dismiss="modal">
+        Retour
+    </button>
+</div>

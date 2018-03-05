@@ -11,6 +11,7 @@ export class AuthGuard {
 
     canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot ) {
         if(this.authService.isLoggedIn()) return true;
+        return false;
         // else navigate to login
     }
 }

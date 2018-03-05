@@ -15,6 +15,7 @@ import {LoginComponent} from './login/login.component';
 import {AuthService} from './auth.service';
 import {AuthGuard} from './auth.guard';
 import {FormsModule} from '@angular/forms';
+import {AdminComponent} from './admin/admin.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import {FormsModule} from '@angular/forms';
         HomeComponent,
         PanierComponent,
         ProductDetailsComponent,
-        LoginComponent
+        LoginComponent,
+        AdminComponent
     ],
     imports: [
         BrowserModule,

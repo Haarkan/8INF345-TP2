@@ -5,6 +5,7 @@ import {HomeComponent} from './home/home.component';
 import {ProductDetailsComponent} from './home/product-details/product-details.component';
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './auth.guard';
+import {AdminComponent} from './admin/admin.component';
 
 
 const appRoutes: Routes = [
@@ -19,8 +20,7 @@ const appRoutes: Routes = [
     {
         path: 'panier',
         component: PanierComponent,
-        data: { title: 'Panier' },
-
+        data: { title: 'Panier' }
     },
     {
         path: 'details/:id',
@@ -31,6 +31,13 @@ const appRoutes: Routes = [
         path: 'login',
         component: LoginComponent,
         data: { title: 'Login' }
+
+    },
+    {
+        path: 'admin',
+        component: AdminComponent,
+        data: { title: 'Admin' },
+        canActivate: [AuthGuard]
     }
 ];
 

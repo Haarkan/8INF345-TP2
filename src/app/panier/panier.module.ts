@@ -14,5 +14,5 @@ import {CartService} from '../cart.service';
         CartService
     ]
 })
-export class HomeModule {
+export class PanierModule {
 }

@@ -30,4 +30,13 @@ export class ProductService {
         return product;
     }
 
+    public deleteProduct (product: Product): void {
+        PRODUCTS.forEach(finded => {
+            if (finded.id === product.id) {
+                PRODUCTS.splice(PRODUCTS.indexOf(finded), 1);
+
+            }
+        });
+    }
+
 }
