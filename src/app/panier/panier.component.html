@@ -2,9 +2,8 @@
 
     <div id="modal"></div>
     <h1>Votre panier</h1>
-    <p>Total HT : </p>
-    <h4>Total TTC : </h4>
-
+    <p>Total HT : {{getTotal()}} $CA</p>
+    <h4>Total TTC : {{getTotal()*1.10}} $CA </h4>
     <button (click)="payCart()" type="button" class="btn btn-success"><span>Payer</span></button>
     <div *ngIf="errorPayement" class="alert-danger">Erreur : le payement a échoué !</div>
     <div id="productList" class="row" style="width: 100%">

@@ -61,4 +61,8 @@ export class PanierComponent implements OnInit {
         this.get10Products(this.curentPage);
     }
 
+    getTotal() : number{
+        return this.cartService.totalPrice();
+    }
+
 }

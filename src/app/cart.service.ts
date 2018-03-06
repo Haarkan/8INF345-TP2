@@ -22,6 +22,15 @@ export class CartService {
         return this.cart.length;
     }
 
+    public totalPrice(): number {
+        let total: number;
+        total = 0;
+        for(let i of this.cart){
+            total += i.price;
+        }
+        return total;
+    }
+
     public payCart(): boolean {
         if (Math.floor(Math.random() * Math.floor(2)) == 1) {
             this.cart = new Array<Product>();
