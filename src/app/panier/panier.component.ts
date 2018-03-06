@@ -48,15 +48,21 @@ export class PanierComponent implements OnInit {
     }
 
     payCart(): void {
-        if (this.cartService.payCart()) {
-            this.isPaid = true;
-            this.errorPayement = false;
-            this.curentProducts = new Array<Product>();
-            this.toastService.success('Votre commande n°' + this.makeid() + 'a été passée et vous sera livrée très prochainement !', 'Succès !');
-
+        if(this.cartService.countProducts() > 0) {
+            if (this.cartService.payCart()) {
+                this.isPaid = true;
+                this.errorPayement = false;
+                this.curentProducts = new Array<Product>();
+                this.toastService.success('Votre commande n°' + this.makeid() +
+                    'a été passée et vous sera livrée très prochainement !', 'Succès !');
+            }
+            else {
+                this.errorPayement = true;
+            }
+        } else {
+            this.toastService.error('Panier vide :(', 'Erreur !');
         }
-        else
-            this.errorPayement = true;
+
 
     }
 
