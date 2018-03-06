@@ -16,6 +16,8 @@ export class AuthService {
     public auth(username: string, password: string) {
         if (username === 'admin' && password === 'admin') {
             this.logged = true;
+            return true;
         }
+        return false;
     }
 }

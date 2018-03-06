@@ -16,10 +16,13 @@ export class LoginComponent implements OnInit {
     password: string;
     username: string;
 
-    login(): void {
-        this.authService.auth(this.username, this.password);
+    login(): boolean {
+        return this.authService.auth(this.username, this.password);
     }
 
+    isLoggedIn(): boolean {
+        return this.authService.isLoggedIn();
+    }
     ngOnInit() {
     }
 
