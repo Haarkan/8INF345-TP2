@@ -1,7 +1,10 @@
 <div id="MainContent" class="container" xmlns="http://www.w3.org/1999/html">
 
     <div id="modal"></div>
-    <h1>This is S'panier</h1>
+    <h1>Votre panier</h1>
+    <p>Total HT : </p>
+    <h4>Total TTC : </h4>
+
     <button (click)="payCart()" type="button" class="btn btn-success"><span>Payer</span></button>
     <div *ngIf="errorPayement" class="alert-danger">Erreur : le payement a échoué !</div>
     <div id="productList" class="row" style="width: 100%">
