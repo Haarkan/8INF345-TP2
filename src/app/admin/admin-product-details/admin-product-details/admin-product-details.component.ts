@@ -3,6 +3,7 @@ import {Product} from '../../../models/product';
 import {ActivatedRoute} from '@angular/router';
 import {CartService} from '../../../cart.service';
 import {ProductService} from '../../../product.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'app-admin-product-details',
@@ -13,7 +14,7 @@ export class AdminProductDetailsComponent implements OnInit {
     id: number;
     product: Product;
 
-    constructor(public route: ActivatedRoute, private productService: ProductService, private cartService: CartService) {
+    constructor(public route: ActivatedRoute, private productService: ProductService, private cartService: CartService, private toastService: ToastrService) {
         this.route.params.subscribe(params => {
             this.id = +params['id']; // (+) converts string 'id' to a number
 
@@ -29,6 +30,8 @@ export class AdminProductDetailsComponent implements OnInit {
 
     editProduct(): void {
         this.productService.editProduct(this.product);
+        this.toastService.success('Le produit à été édité ! !', 'Succès !');
+
     }
 
     ngOnInit() {

@@ -3,6 +3,7 @@ import {ActivatedRoute, RouterModule} from '@angular/router';
 import {Product} from '../models/product';
 import {ProductService} from '../product.service';
 import {CartService} from '../cart.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
     curentPage: number;
     curentProducts: Product[];
 
-    constructor(private productService: ProductService, private cartService: CartService) {
+    constructor(private productService: ProductService, private cartService: CartService, private toastService: ToastrService) {
     }
 
     ngOnInit() {
@@ -45,6 +46,9 @@ export class HomeComponent implements OnInit {
 
     addToCart(product: Product): void {
         this.cartService.addToCart(product);
+
+        this.toastService.success('Le produit à été ajouté au panier !', 'Succès !');
+
     }
 
     setCurentPage(page: number) {

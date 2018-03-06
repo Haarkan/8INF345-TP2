@@ -3,6 +3,7 @@ import {Product} from '../models/product';
 import {CartService} from '../cart.service';
 import {ProductService} from '../product.service';
 import {ActivatedRoute} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'app-admin',
@@ -15,7 +16,8 @@ export class AdminComponent implements OnInit {
     curentPage: number;
     curentProducts: Product[];
 
-    constructor(public route: ActivatedRoute, private productService: ProductService, private cartService: CartService) {
+    constructor(public route: ActivatedRoute, private productService: ProductService,
+                private cartService: CartService, private toastService: ToastrService) {
     }
 
     ngOnInit() {
@@ -53,7 +55,10 @@ export class AdminComponent implements OnInit {
         this.get10Products(9);
         this.nbProducts = this.productService.countProducts();
         this.paginationButtons();
+        this.toastService.success('Le produit à été supprimé  !', 'Succès !');
+
     }
+
     setCurentPage(page: number) {
         this.curentPage = page;
         this.get10Products(this.curentPage);

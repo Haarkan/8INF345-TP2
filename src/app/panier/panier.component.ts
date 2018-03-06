@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Product} from '../models/product';
 import {ProductService} from '../product.service';
 import {CartService} from '../cart.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'app-panier',
@@ -15,7 +16,8 @@ export class PanierComponent implements OnInit {
     curentProducts: Product[];
     isPaid: boolean;
     errorPayement: boolean;
-    constructor(public route: ActivatedRoute, private productService: ProductService, private cartService: CartService) {
+    constructor(public route: ActivatedRoute, private productService: ProductService,
+                private cartService: CartService, private toastService: ToastrService) {
     }
 
 
@@ -50,6 +52,8 @@ export class PanierComponent implements OnInit {
             this.isPaid = true;
             this.errorPayement = false;
             this.curentProducts = new Array<Product>();
+            this.toastService.success('Votre commande n°' + this.makeid() + 'a été passée et vous sera livrée très prochainement !', 'Succès !');
+
         }
         else
             this.errorPayement = true;
@@ -61,8 +65,20 @@ export class PanierComponent implements OnInit {
         this.get10Products(this.curentPage);
     }
 
-    getTotal() : number{
+    getTotal(): number{
         return this.cartService.totalPrice();
+    }
+
+    private makeid(): string {
+        let text: string = "";
+        const possibleInt: string = "0123456789";
+        const possibleChar: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        for (var i = 0; i < 5; i++)
+            text += possibleInt.charAt(Math.floor(Math.random() * possibleInt.length));
+
+        for (var i = 0; i < 9; i++)
+            text += possibleChar.charAt(Math.floor(Math.random() * possibleChar.length));
+        return text;
     }
 
 }

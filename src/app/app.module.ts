@@ -17,6 +17,8 @@ import {AuthGuard} from './auth.guard';
 import {FormsModule} from '@angular/forms';
 import {AdminComponent} from './admin/admin.component';
 import {AdminProductDetailsComponent} from './admin/admin-product-details/admin-product-details/admin-product-details.component';
+import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -32,7 +34,9 @@ import {AdminProductDetailsComponent} from './admin/admin-product-details/admin-
         BrowserModule,
         NgbModule.forRoot(),
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot()
     ],
     providers: [
         ProductService,
